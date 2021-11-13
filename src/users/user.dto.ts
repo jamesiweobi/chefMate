@@ -1,11 +1,6 @@
-import { IsEmail, IsOptional, IsString } from 'class-validator';
-import { UsersEnum } from './users.enum';
+import { IsEmail, IsBoolean, IsString } from 'class-validator';
 
 export class UsersDTO {
-  // @IsString()
-  // @IsOptional()
-  // id: string;
-
   @IsString()
   username: string;
 
@@ -16,21 +11,13 @@ export class UsersDTO {
   @IsString()
   password: string;
 
-  @IsString()
-  role: string;
+  @IsBoolean()
+  isAdmin: boolean;
 
   constructor(data) {
     this.username = data.username;
     this.email = data.email;
     this.password = data.password;
-    this.role = data.role;
+    this.isAdmin = data.isAdmin;
   }
-}
-
-export interface User {
-  // id: string;
-  username: string;
-  email: string;
-  password: string;
-  role: UsersEnum;
 }

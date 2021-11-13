@@ -11,21 +11,20 @@ const newMockUser: UsersDTO = {
   username: 'fake-user',
   email: 'fakee@email.com',
   password: 'string',
-  role: UsersEnum.ADMIN,
+  isAdmin: false,
 };
 
 describe('UsersService', () => {
   let service: UsersService;
   let model: Model<UserDocument>;
-  const fakeUserDTO = new UsersDTO(newMockUser);
 
   const FakeUsersService = {
     // findOne: () => Promise.resolve([]),
-    // create: jest.fn((user) => {
-    //   return { id: 'fake-id', ...fakeUserDTO };
-    // }),
+    create: jest.fn((user) => {
+      return { id: 'fake-id', ...fakeUserDTO };
+    }),
     // find:jest.fn().mockImplementation(() => UsersDTO[]),
-    create: jest.fn(),
+    // create: jest.fn(),
   };
 
   beforeEach(async () => {

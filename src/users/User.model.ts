@@ -1,12 +1,11 @@
 import { Prop, SchemaFactory, Schema } from '@nestjs/mongoose';
-import { IsEnum } from 'class-validator';
+import { IsBoolean } from 'class-validator';
 import { Document } from 'mongoose';
-import { UsersEnum } from './users.enum';
 
-export type UserDocument = Document & UserModel;
+export type UserDocument = Document & User;
 
 @Schema({ timestamps: true })
-export class UserModel {
+export class User {
   @Prop({ required: true })
   username: string;
 
@@ -16,9 +15,17 @@ export class UserModel {
   @Prop({ required: true })
   password: string;
 
-  @IsEnum(UsersEnum)
+  @IsBoolean()
   @Prop({ required: true })
-  role: UsersEnum;
+  isAdmin: boolean;
 }
 
-export const UserSchema = SchemaFactory.createForClass(UserModel);
+export const UserSchema = SchemaFactory.createForClass(User);
+
+export interface IUser {
+  id: string;
+  username: string;
+  email: string;
+  password: string;
+  isAdmin: boolean;
+}

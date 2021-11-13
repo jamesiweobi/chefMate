@@ -5,10 +5,17 @@ import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
   let service: AuthService;
-
+  const FakeUsersService = {};
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [AuthService],
+      providers: [
+        AuthService,
+        UsersService,
+        {
+          provide: UsersService,
+          useValue: FakeUsersService,
+        },
+      ],
     }).compile();
     service = module.get<AuthService>(AuthService);
   });
