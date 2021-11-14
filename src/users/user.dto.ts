@@ -65,3 +65,20 @@ export class UserLoginDTO {
   })
   password: string;
 }
+
+export class UpdateUserDTO {
+  @IsString()
+  username: string;
+
+  @IsString()
+  email: string;
+
+  @IsString()
+  password: string;
+
+  @IsString()
+  id: string;
+
+  @IsBoolean()
+  isAdmin: boolean;
+}

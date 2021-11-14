@@ -22,10 +22,18 @@ export class User {
 
 export const UserSchema = SchemaFactory.createForClass(User);
 
-export interface IUser {
+export interface IUser extends Document {
   id: string;
   username: string;
   email: string;
   password: string;
   isAdmin: boolean;
+}
+
+export interface IUserUpdate {
+  id: string;
+  username?: string;
+  email?: string;
+  password?: string;
+  isAdmin?: boolean;
 }

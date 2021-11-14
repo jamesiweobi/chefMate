@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UsersDTO } from '../users/user.dto';
+import { UsersDTO } from './user.dto';
 import { AuthService } from './auth.service';
-import { IUser, UserDocument } from '../users/user.model';
-import { UsersService } from '../users/users.service';
+import { IUser, UserDocument } from './user.model';
+import { UsersService } from './users.service';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -13,10 +13,6 @@ describe('AuthService', () => {
     password: 'fakePassword',
     isAdmin: true,
   };
-
-  // .mockImplementation(() =>
-  //   Promise.resolve({ id: new Date().toString(), ...mockUser }),
-  // ),
   const FakeUsersService: Partial<UsersService> = {
     // login: jest.fn(),
     create: jest
