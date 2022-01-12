@@ -15,14 +15,17 @@ export class UsersService {
     return await this.usersRepository.findOneById(id);
   }
 
-  async find(field: string, params): Promise<UserDocument> {
-    return await this.usersRepository.find(field, params);
+  async findOne(field: string, params: string) {
+    const user = await this.usersRepository.findOne(field, params);
+    return user;
   }
 
   async updateOne(user: IUserUpdate): Promise<UserDocument> {
     return await this.usersRepository.updateOne(user);
   }
-
+  async find(field?: string, params?: string): Promise<UserDocument[]> {
+    return await this.usersRepository.find(field, params);
+  }
   async removeOne(userId: string): Promise<string> {
     const user = await this.usersRepository.findOneById(userId);
     if (user) {

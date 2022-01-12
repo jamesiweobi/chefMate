@@ -10,7 +10,7 @@ import {
 export class UsersDTO {
   @IsString()
   @IsNotEmpty({
-    message: 'username cannot be empty, please provide a username',
+    message: 'Username cannot be empty, please provide a username',
   })
   username: string;
 
@@ -26,26 +26,19 @@ export class UsersDTO {
     message: 'Please provide a valid 6 character password.',
   })
   @MinLength(6, {
-    message: 'Title is too short',
+    message: 'Password should me more than 6 characters',
   })
   password: string;
 
   @IsBoolean()
   isAdmin: boolean;
-
-  constructor(data) {
-    this.username = data.username;
-    this.email = data.email;
-    this.password = data.password;
-    this.isAdmin = data.isAdmin;
-  }
 }
 
 export class UserLoginDTO {
   @IsString()
   @IsOptional()
   @IsNotEmpty({
-    message: 'username cannot be empty, please provide a username',
+    message: 'Username cannot be empty, please provide a username',
   })
   username: string;
 
@@ -61,7 +54,7 @@ export class UserLoginDTO {
     message: 'Please provide a valid 6 character password.',
   })
   @MinLength(6, {
-    message: 'Title is too short',
+    message: 'Password should me more than 6 characters',
   })
   password: string;
 }

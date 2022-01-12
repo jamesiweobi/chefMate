@@ -14,44 +14,47 @@ export class UsersRepository {
   constructor(@InjectModel('Users') private readonly userModel: Model<IUser>) {}
 
   async create(user: UsersDTO): Promise<UserDocument> {
-    const userExists = await this.userModel.find({ username: user.username });
-    if (!userExists) {
-      return await this.userModel.create(user);
+    const userUsernameExists = await this.userModel.find({
+      username: user.username,
+    });
+    if (userUsernameExists.length) {
+      throw new BadRequestException('Username is taken!');
     }
-    throw new BadRequestException('Username taken!');
+    return await this.userModel.create(user);
   }
 
-  async findOneById(id: string): Promise<UserDocument> {
+  async findOneById(userId: string): Promise<UserDocument> {
     try {
-      const user = await this.userModel.findById(id);
-      if (!user) {
-        throw new NotFoundException(`No user found!`);
-      }
+      const user = await this.userModel.findById(userId);
       return user;
     } catch (err) {
       if (err.name == 'CastError') {
-        throw new BadRequestException(`Invalid user id: ${id}`);
+        throw new BadRequestException(`Invalid user id: ${userId}`);
       }
       throw new NotFoundException('User not found!');
     }
   }
 
-  async find(field: string, params: string): Promise<UserDocument> {
+  async findOne(field: string, params: string): Promise<UserDocument> {
     const user = await this.userModel.findOne({
       [field]: params,
     });
-    if (user) {
-      return user;
-    }
-    throw new NotFoundException(`user does not exist`);
+    return user;
+  }
+
+  async find(field?: string, params?: string): Promise<UserDocument[]> {
+    return await this.userModel.find({ [field]: params });
   }
 
   async updateOne(updateData: IUserUpdate): Promise<UserDocument> {
     const user = await this.findOneById(updateData.id);
-    for (let key in updateData) {
-      user[key] = updateData[key];
+    if (user) {
+      for (let key in updateData) {
+        user[key] = updateData[key];
+      }
+      return user.save();
     }
-    return user.save();
+    throw new BadRequestException('User not found');
   }
 
   async removeOne(userId: string): Promise<string> {
@@ -59,7 +62,10 @@ export class UsersRepository {
       await this.userModel.deleteOne({ _id: userId });
       return 'OK';
     } catch (err) {
-      throw new InternalServerErrorException();
+      if (err.name == 'CastError') {
+        throw new BadRequestException(`Invalid user id: ${userId}`);
+      }
+      throw new NotFoundException('User not found!');
     }
   }
 }
