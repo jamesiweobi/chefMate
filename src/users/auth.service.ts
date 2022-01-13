@@ -15,13 +15,12 @@ export class AuthService {
       user = await this.usersService.findOne('username', loginUser.username);
     }
     const [salt, hashedPassword] = user.password.split(',');
+    console.log(hashedPassword, 'password');
     const passwordHash = await passRehasher(hashedPassword, salt);
     if (loginUser.password !== passwordHash) {
       throw new BadRequestException('Username, Email, or password wrong.');
     }
     return user;
-
-    // TODO: add auth jwt feature here to signToken
   }
 
   async singUp(user: UsersDTO): Promise<UserDocument> {

@@ -15,7 +15,9 @@ export class UsersDTO {
   username: string;
 
   @IsString()
-  @IsEmail()
+  @IsEmail(undefined, {
+    message: 'Please enter a valid email address',
+  })
   @IsNotEmpty({
     message: 'Email cannot be empty, please provide a valid email',
   })
@@ -44,6 +46,9 @@ export class UserLoginDTO {
 
   @IsString()
   @IsOptional()
+  @IsEmail(undefined, {
+    message: 'Please enter a valid email address',
+  })
   @IsNotEmpty({
     message: 'Email cannot be empty, please provide a valid email',
   })
@@ -61,17 +66,32 @@ export class UserLoginDTO {
 
 export class UpdateUserDTO {
   @IsString()
+  @IsNotEmpty({
+    message: 'Username cannot be empty, please provide a username',
+  })
   username: string;
 
+  @IsEmail(undefined, {
+    message: 'Please enter a valid email address',
+  })
+  @IsNotEmpty({
+    message: 'Email cannot be empty, please provide a valid email',
+  })
   @IsString()
   email: string;
 
   @IsString()
+  @IsNotEmpty({
+    message: 'Please provide a valid 6 character password.',
+  })
+  @MinLength(6, {
+    message: 'Password should me more than 6 characters',
+  })
   password: string;
 
   @IsString()
   id: string;
 
-  @IsBoolean()
+  @IsBoolean({ message: 'A user type is required' })
   isAdmin: boolean;
 }
