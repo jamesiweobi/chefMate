@@ -31,12 +31,6 @@ export class UsersController {
     return user;
   }
 
-  @Get('whoami')
-  async whoami(@Session() session: any) {
-    console.log(session.userId);
-    return await this.userService.findOneById(session.userId);
-  }
-
   @Post('signout')
   async signout(@Session() session: any) {
     session.userId = null;

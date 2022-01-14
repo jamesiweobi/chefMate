@@ -14,11 +14,10 @@ export class AuthService {
     } else if (loginUser.username) {
       user = await this.usersService.findOne('username', loginUser.username);
     }
-    const [salt, hashedPassword] = user.password.split(',');
-    console.log(hashedPassword, 'password');
-    const passwordHash = await passRehasher(hashedPassword, salt);
-    if (loginUser.password !== passwordHash) {
-      throw new BadRequestException('Username, Email, or password wrong.');
+    const [salt, hashedPassword] = user.password.split('.');
+    const passwordHash = await passRehasher(loginUser.password, salt);
+    if (user.password !== passwordHash) {
+      throw new BadRequestException('Username, Email, or Password wrong.');
     }
     return user;
   }
