@@ -4,13 +4,16 @@ import {
   Get,
   Post,
   Session,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
+import { AuthGuard } from 'src/guards/auth.gaurd';
 import { AuthService } from './auth.service';
+import { CurrentUser } from './decorators/current-user.decorator';
 import { UserResDTO } from './dtos/user.response.dto';
 import { Serialize } from './interceptor/serialize.interceptor';
 import { UserLoginDTO, UsersDTO } from './user.dto';
-import { UserDocument } from './User.model';
+import { User, UserDocument } from './User.model';
 import { UsersService } from './users.service';
 
 @Serialize(UserResDTO)
@@ -34,6 +37,12 @@ export class UsersController {
   @Post('signout')
   async signout(@Session() session: any) {
     session.userId = null;
+  }
+
+  @Get('whoami')
+  @UseGuards(AuthGuard)
+  async whoami(@CurrentUser() user: User) {
+    return user;
   }
 
   @Post('signin')
