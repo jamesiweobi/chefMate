@@ -29,7 +29,7 @@ export class UsersController {
     @Body() body: UsersDTO,
     @Session() session: any,
   ): Promise<UserDocument> {
-    const user = await this.authService.singUp(body);
+    const user = await this.authService.signUp(body);
     session.userId = user.id;
     return user;
   }
@@ -50,7 +50,7 @@ export class UsersController {
     @Body() body: UserLoginDTO,
     @Session() session: any,
   ): Promise<UserDocument> {
-    const user = await this.authService.signin(body);
+    const user = await this.authService.signIn(body);
     session.userId = user.id;
     return user;
   }

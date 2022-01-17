@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { UserLoginDTO, UsersDTO } from './user.dto';
 import { UserDocument } from './User.model';
 import { UsersService } from './users.service';
@@ -7,12 +11,15 @@ import { passHasher, passRehasher } from '../utils/hashPassword.utils';
 export class AuthService {
   constructor(private readonly usersService: UsersService) {}
 
-  async signin(loginUser: UserLoginDTO) {
+  async signIn(loginUser: UserLoginDTO) {
     let user;
     if (loginUser.email) {
       user = await this.usersService.findOne('email', loginUser.email);
     } else if (loginUser.username) {
       user = await this.usersService.findOne('username', loginUser.username);
+    }
+    if (!user) {
+      throw new NotFoundException('User does not exist.');
     }
     const [salt, hashedPassword] = user.password.split('.');
     const passwordHash = await passRehasher(loginUser.password, salt);
@@ -22,7 +29,7 @@ export class AuthService {
     return user;
   }
 
-  async singUp(user: UsersDTO): Promise<UserDocument> {
+  async signUp(user: UsersDTO): Promise<UserDocument> {
     const userExists = await this.usersService.find('email', user.email);
     if (userExists.length) {
       throw new BadRequestException('Email in use.');
