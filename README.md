@@ -72,3 +72,11 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
+
+# About Shalom
+Name : Jumoke Ajileye
+
+Cohort : Stutern 1.3
+
+Track : Frontend Development
+ 
