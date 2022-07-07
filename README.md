@@ -72,3 +72,13 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
+
+## about me
+
+name : ogunnowo oluwatobi
+
+
+track : software development(backend)
+
+
+cohort : 1.3
