@@ -75,5 +75,5 @@ Nest is [MIT licensed](LICENSE).
 
 
 ## Name: Esther Orji-Amakonze
-## Track: Software engineering 
-## Cohort: stutern
+## Track: Software engineering  group1
+## Cohort: stutern 2022
