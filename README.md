@@ -72,3 +72,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
+
+
+## Name: Esther Orji-Amakonze
+## Track: Software engineering  group1
+## Cohort: stutern 2022
