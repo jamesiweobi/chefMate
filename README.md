@@ -72,3 +72,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
+
+Name: Ikeriochi Chisara
+Track: Frontend Development
+Cohort: Stutern 1.4
