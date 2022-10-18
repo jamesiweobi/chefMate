@@ -72,4 +72,10 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
-chinenye nwazota, sga14, swe
+
+### NAME
+- Chinenye Nwazota
+### COHORT 
+- SGA14
+### TRACK
+- SWE 
