@@ -1,0 +1,1 @@
+Hi, my name is lilian. i am currently in cohort 1.4 and in the software engineering track in stutern (women in tech). i got a scholarship to attend this program. i am a Nigerian and as at the time typing this, i am in my final year in the university. i hope i am able to scale through in this program . Yes i like french. salut
