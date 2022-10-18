@@ -72,3 +72,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
+
+<p align="center">
+  Full name: Enyegue Dzogoum Grace Pascaline
+  Track: Software Engineering
+  Cohort: 1.4
+</p>
