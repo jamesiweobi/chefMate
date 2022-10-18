@@ -68,6 +68,11 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
+## SGA SWE 14
+- Name: Eruoghene Iroro
+- Cohort: 14
+- Track: Software Engineering (Frontend)
+
 ## License
 
 Nest is [MIT licensed](LICENSE).
