@@ -75,5 +75,5 @@ Nest is [MIT licensed](LICENSE).
 
 # Student Details
 Name: Mary Nzembi Mutuku
-Cohort: SGA14
-Track: Mobile app development
+Cohort: 1.4
+Track: Software Engineering: Mobile App Development(Flutter)
