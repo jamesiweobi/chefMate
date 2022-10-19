@@ -74,6 +74,6 @@ Nest is [MIT licensed](LICENSE).
 # chefMate
 
 
-Name: Alison Oyinkansola
+Name: Allison Oyinkansola
 Cohort: 1.4
 Track: Software Engineering
