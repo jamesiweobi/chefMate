@@ -74,5 +74,5 @@ Nest is [MIT licensed](LICENSE).
 # chefMate
 
 Gerald Oganwu 
-Backend Developer 
+Backend DevOps 
 Cohort 1.4
