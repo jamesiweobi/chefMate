@@ -1,5 +1,5 @@
+DEBORAH DANJUMA &nbsp; Cohort 2022 &nbsp; SWE Track
 <p align="center">
-  <p>DEBORAH DANJUMA &nbsp; Cohort 2022 &nbsp; SWE Track</p>
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
