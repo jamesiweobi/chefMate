@@ -35,7 +35,7 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
+# gi
 $ npm run start
 
 # watch mode
@@ -72,3 +72,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
+
+
+Name: Busolami Oluwabi
+Track: Frontend Development
+Cohort: 1.4
