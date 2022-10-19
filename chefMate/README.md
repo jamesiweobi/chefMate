@@ -73,6 +73,6 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 # chefMate
 
-Name: Fwenshimwa Kenji
-Track: Mobile development
-Cohort: 1.4
+name: fwenshimwa kenji
+track: mobile development
+cohort: 1.4
