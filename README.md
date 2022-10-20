@@ -77,3 +77,4 @@ Nest is [MIT licensed](LICENSE).
 > group 1 sg 3 team 5
 > mobile development
 chapter 2 follow up
+chapter 3 studies
