@@ -30,6 +30,7 @@
 
 ```bash
 $ npm install
+# AbimbolaJOLAYEMI_swefrontend_1.4
 ```
 
 ## Running the app
