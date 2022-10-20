@@ -73,6 +73,6 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 # chefMate
 
-Name: Lateefat Abdulkareem
+Name: Lateefat Adenike  Abdulkareem
 Track: Software Engineering 
 Cohort: 1.4
