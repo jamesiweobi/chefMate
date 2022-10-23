@@ -1,6 +1,6 @@
 Nancy Akinkugbe
 Front End
-Cohort 14
+Cohort 1.4
 
 
 <p align="center">
