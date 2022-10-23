@@ -75,5 +75,5 @@ Nest is [MIT licensed](LICENSE).
 
 My Details
 - ONYOBENO OVUZORIE
-- I4GXzuri COHURT 2
+- I4GXzuri COHURT  / swe cohort 1.4
 - FRONTEND DEVELOPMENT
