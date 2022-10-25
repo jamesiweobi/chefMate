@@ -72,7 +72,6 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # chefMate
-
-NAME: Ayoola Rachael
-Track: Software Engineering
-Cohort: 1.4
+NAME: Rachael Ayoola
+TRACK: SOftware Engineering
+COHORT: 1.4
